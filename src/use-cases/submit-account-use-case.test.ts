@@ -6,7 +6,7 @@ const submitFeedback = new SubmitAccountUseCase(
     {create: createSubmitSpy},
 )
 
-describe('Submit Product',()=>{
+describe('Submit account',()=>{
     it('should be able to submit the account',async ()=>{
         
         await expect(submitFeedback.execute({
