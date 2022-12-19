@@ -7,14 +7,14 @@ export class SubmitAccountUseCase {
     ){}
 
     async execute(request : Account){
-        const { email, password } = request;
+        const { email, passwordHash } = request;
 
-        if(!email || !password ){
+        if(!email || !passwordHash ){
             throw new Error('All informations are required')
         }
         await this.AccountsRepository.create({
             email,
-            password
+            passwordHash
         })
     }
 }

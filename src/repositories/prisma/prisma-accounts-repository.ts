@@ -3,11 +3,11 @@ import { prisma } from '../../prisma';
 import { Account } from '../../interface';
 
 export class PrismaAccountsRepository implements  AccountsRepository {
-    async create({ email, password }: Account){
+    async create({ email, passwordHash }: Account){
      await prisma.account.create({
             data: {
-                email, 
-                password, 
+                email,
+                password: passwordHash,
             }
         })
     };
