@@ -4,7 +4,8 @@ import { Account } from '../../interface';
 
 export class PrismaAccountsRepository implements  AccountsRepository {
     async create({ email, passwordHash }: Account){
-     await prisma.account.create({
+
+        await prisma.account.create({
             data: {
                 email,
                 password: passwordHash,

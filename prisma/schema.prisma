@@ -11,9 +11,18 @@ datasource db {
 }
 
 model Account {
-  id       String @id @unique @default(uuid())
-  email    String @unique
+  id       String    @id @unique @default(uuid())
+  email    String    @unique
   password String
+  contacts Contact[]
 
   @@map("accounts")
+}
+
+model Contact {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
+  phone     String  @unique
+  Account   Account @relation(fields: [accountId], references: [id])
+  accountId String
 }

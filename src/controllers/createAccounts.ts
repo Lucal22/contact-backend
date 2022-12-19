@@ -23,7 +23,7 @@ const createAccounts = async (req: any, res: any) => {
         })
         return res.status(201).send('Conta criada')
     }else{
-        res.status(500).json('Falta informações sobre o produto')
+        res.status(500).json('Email ou senha não informados')
     }
 };
 
