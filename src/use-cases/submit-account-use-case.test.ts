@@ -11,7 +11,7 @@ describe('Submit account',()=>{
         
         await expect(submitFeedback.execute({
             email: 'test@email.com',
-            password: 'test12345',
+            passwordHash: 'test12345',
     })).resolves.not.toThrow();
 
         expect(createSubmitSpy).toHaveBeenCalled();
@@ -21,7 +21,7 @@ describe('Submit account',()=>{
         
         await expect(submitFeedback.execute({
             email: 'test@email.com',
-            password: ''
+            passwordHash: ''
         })).resolves.toThrow()
     })
 

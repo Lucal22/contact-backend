@@ -21,6 +21,7 @@ const loginAccounts = async (req: any, res: any) => {
             res.status(500).json('Email ou senha incorretos')
             return;
         }
+        res.status(200).send(user)
         return{...user}
     }else{
         res.status(500).json('Email ou senha não informados')

@@ -18,7 +18,7 @@ const createAccounts = async (req: any, res: any) => {
         )
 
         await submitAccountUseCase.execute({
-            email, 
+            email,
             passwordHash
         })
         return res.status(201).send('Conta criada')
