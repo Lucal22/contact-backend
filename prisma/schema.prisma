@@ -22,7 +22,7 @@ model Account {
 model Contact {
   id           Int     @id @default(autoincrement())
   name         String  @unique
-  phone        String  @unique
+  phone        Int     @unique
   Account      Account @relation(fields: [accountEmail], references: [email])
   accountEmail String
 }
