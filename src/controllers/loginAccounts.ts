@@ -10,6 +10,9 @@ const loginAccounts = async (req: any, res: any) => {
         const user = await prisma.account.findUnique({
             where:{
                 email
+            },
+            include:{
+                contacts: true
             }
         })
         if(!user) {
