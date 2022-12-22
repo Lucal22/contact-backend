@@ -1,6 +1,6 @@
 import { Contact } from "../interface";
 import { PrismaContactsRepository} from '../repositories/prisma/prisma-contacts-repository';
-import { SubmitContactUseCase } from '../use-cases/submit-contact-use-case';
+import { SubmitContactUseCase } from '../use-cases/contact-use-case';
 
 
 const newContacts = async (req: any, res: any) => {

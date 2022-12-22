@@ -15,9 +15,21 @@ export interface Account {
 }
 
 export type Contact = {
-    id?: number;
-    email: string;
+    id?: string;
+    email?: string;
     name: string;
     phone: string;
     
+}
+
+export interface AccountsRepository{
+    create: (data: Account) => Promise<void>
+}
+
+export interface ContactsRepository{
+    create: (data: Contact) => Promise<void>
+}
+
+export interface ContactsUpdateRepository{
+    update: (data:Contact) => Promise<void>
 }

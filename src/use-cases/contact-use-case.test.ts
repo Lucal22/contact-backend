@@ -1,4 +1,4 @@
-import { SubmitContactUseCase } from "./submit-contact-use-case";
+import { SubmitContactUseCase } from "./contact-use-case";
 
 const createSubmitSpy = jest.fn();
 

@@ -20,9 +20,9 @@ model Account {
 }
 
 model Contact {
-  id           Int     @id @default(autoincrement())
-  name         String  @unique
-  phone        Int     @unique
+  id           String  @id @unique @default(uuid())
+  name         String
+  phone        String
   Account      Account @relation(fields: [accountEmail], references: [email])
   accountEmail String
 }

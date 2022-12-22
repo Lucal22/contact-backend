@@ -1,5 +1,4 @@
-import { Account } from '../interface';
-import { AccountsRepository } from '../repositories/accounts-repository';
+import { Account, AccountsRepository } from '../interface';
 
 export class SubmitAccountUseCase {
     constructor(
