@@ -5,6 +5,7 @@ import newContacts from './controllers/newContacts';
 import updateContacts from './controllers/updateContacts';
 import deleteContacts from './controllers/deleteContacts';
 import deleteAllContacts from './controllers/deleteAllContacts';
+import getAllAccounts from './controllers/getAllAccounts';
 
 const routes = express.Router();
 
@@ -14,6 +15,7 @@ routes.post('/login/contacts', newContacts);
 routes.post('/login/contacts/update', updateContacts);
 routes.get('/login/contacts/delete', deleteContacts);
 routes.get('/login/contacts/deleteAll', deleteAllContacts);
+routes.get('/accounts', getAllAccounts);
 
 export default routes;
 
