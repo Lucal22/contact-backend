@@ -1,5 +1,7 @@
 import { Contact, ContactsRepository, ContactsUpdateRepository } from '../interface';
 
+const regex = /\D/g;
+
 export class SubmitContactUseCase {
     constructor(
       private  ContactsRepository: ContactsRepository, 
@@ -8,8 +10,11 @@ export class SubmitContactUseCase {
     async execute(request : Contact){
         const { name, phone, email } = request;
 
-        if(!name || !phone || !email || phone.length > 9){
+        if(!name || !phone || !email){
             throw new Error('All informations are required')
+        }
+        if(phone.length != 9 || regex.test(phone)){
+            throw new Error('Invalid phone number')
         }
         await this.ContactsRepository.create({
             email,
@@ -26,8 +31,11 @@ export class UpdateContactUseCase {
       async execute(request : Contact){
         const { name, phone, id } = request;
 
-        if(!name || !id || !phone || phone.length > 9){
+        if(!name || !id || !phone){
             throw new Error('All informations are required')
+        }
+        if(phone.length != 9 || isNaN(parseInt(phone))){
+            throw new Error('Invalid phone number')
         }
         await this.ContactsUpdateRepository.update({
             id,
