@@ -1,5 +1,6 @@
 import { Body } from "../interface";
 import { prisma } from '../prisma';
+import webToken from "../utils/webToken";
 
 const bcrypt = require('bcryptjs');
 
@@ -10,10 +11,11 @@ const loginAccounts = async (req: any, res: any) => {
         const user = await prisma.account.findUnique({
             where:{
                 email
-            },
-            include:{
-                contacts: true
             }
+            // ,
+            // include:{
+            //     contacts: true
+            // }
         })
         if(!user) {
             return;
@@ -24,8 +26,11 @@ const loginAccounts = async (req: any, res: any) => {
             res.status(500).json('Email ou senha incorretos')
             return;
         }
-        res.status(200).send(user)
-        return{...user}
+        const {id}= user;
+
+        const token = webToken(id, email)
+        res.status(200).send({...user, token})
+        return{...user, token}
     }else{
         res.status(500).json('Email ou senha não informados')
     }
