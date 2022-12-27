@@ -7,7 +7,7 @@ const salt = bcrypt.genSaltSync();
 const createAccounts = async (req: any, res: any) => {
     const { email, password }: Body = req.body
     
-    if(email && password){
+    if(email && password && password.length<13 || password.length>5){
         
         const passwordHash = bcrypt.hashSync(password, salt)
 

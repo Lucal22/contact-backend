@@ -11,9 +11,6 @@ export class SubmitAccountUseCase {
         if(!email || !passwordHash ){
             throw new Error('All informations are required')
         }
-        if(passwordHash.length>12 || passwordHash.length<6 ){
-            throw new Error('Invalid password')
-        }
         await this.AccountsRepository.create({
             email,
             passwordHash
