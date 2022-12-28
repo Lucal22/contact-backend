@@ -6,7 +6,7 @@ import updateContacts from './controllers/updateContacts';
 import deleteContacts from './controllers/deleteContacts';
 import deleteAllContacts from './controllers/deleteAllContacts';
 import getAllAccounts from './controllers/getAllAccounts';
-import tokenValidate from './controllers/token';
+import tokenValidate from './controllers/tokenValidate';
 
 const routes = express.Router();
 
