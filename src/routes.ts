@@ -6,9 +6,11 @@ import updateContacts from './controllers/updateContacts';
 import deleteContacts from './controllers/deleteContacts';
 import deleteAllContacts from './controllers/deleteAllContacts';
 import getAllAccounts from './controllers/getAllAccounts';
+import tokenValidate from './controllers/token';
 
 const routes = express.Router();
 
+routes.post('/token', tokenValidate);
 routes.post('/register', createAccounts);
 routes.post('/login', loginAccounts);
 routes.post('/login/contacts', newContacts);
