@@ -1,7 +1,5 @@
 import { Contact, ContactsRepository, ContactsUpdateRepository } from '../interface';
 
-const regex = /\D/g;
-
 export class SubmitContactUseCase {
     constructor(
       private  ContactsRepository: ContactsRepository, 
@@ -13,7 +11,7 @@ export class SubmitContactUseCase {
         if(!name || !phone || !email){
             throw new Error('All informations are required')
         }
-        if(phone.length != 9 || regex.test(phone)){
+        if(phone.length<8 || phone.length>12 || isNaN(parseInt(phone))){
             throw new Error('Invalid phone number')
         }
         await this.ContactsRepository.create({
