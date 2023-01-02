@@ -32,7 +32,7 @@ export class UpdateContactUseCase {
         if(!name || !id || !phone){
             throw new Error('All informations are required')
         }
-        if(phone.length != 9 || isNaN(parseInt(phone))){
+        if(phone.length < 8 || phone.length > 12  || isNaN(parseInt(phone))){
             throw new Error('Invalid phone number')
         }
         await this.ContactsUpdateRepository.update({
