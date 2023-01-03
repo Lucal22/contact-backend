@@ -5,7 +5,12 @@ const getContacts = async (req: any, res: any) => {
     const contacts = await prisma.contact.findMany({
         where:{
             accountEmail: email
-        }
+        },
+        orderBy: [
+            {
+                createdAt: 'desc'
+            }
+        ]
     })
     if(!contacts) {
         return res.status(500).json('Nenhuma conta encontrada')
