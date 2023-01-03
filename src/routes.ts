@@ -7,9 +7,11 @@ import deleteContacts from './controllers/deleteContacts';
 import deleteAllContacts from './controllers/deleteAllContacts';
 import getContacts from './controllers/getContacts';
 import tokenValidate from './controllers/tokenValidate';
+import getEmails from './controllers/getEmails';
 
 const routes = express.Router();
 
+routes.get('/getEmails', getEmails);
 routes.post('/token', tokenValidate);
 routes.post('/register', createAccounts);
 routes.post('/login', loginAccounts);
