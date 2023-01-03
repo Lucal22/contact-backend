@@ -16,7 +16,7 @@ routes.post('/login', loginAccounts);
 routes.post('/login/contacts', getContacts);
 routes.post('/login/contacts/create', newContacts);
 routes.post('/login/contacts/update', updateContacts);
-routes.get('/login/contacts/delete', deleteContacts);
-routes.get('/login/contacts/deleteAll', deleteAllContacts);
+routes.post('/login/contacts/delete', deleteContacts);
+routes.post('/login/contacts/deleteAll', deleteAllContacts);
 
 export default routes;
