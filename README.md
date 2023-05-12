@@ -99,14 +99,14 @@ This project is a responsive and mobile first page, made using React.js and back
 
 The agenda was developed using React.js on the frontend and Node.js on the backend, both with the help of Typescript to provide static typing. Styled Components was used to style React and Axios components to make HTTP requests. On the backend, Express was used to create the API routes and Prisma was used as the ORM for database access.
 
-The React Hook Form and YUP libraries were used to validate and create rules for user creation and login forms and contact creation and updating.
+The React Hook Form and YUP libraries were used to validate and create rules for user creation, login forms, contact creation and updating.
 
 In the Backend JWT was used to generate the token that allows the user to remain logged in after closing and reopening the page and Bcryptjs to encrypt the users' password.
 
-I also used React Icons libraries on the front end and CORS on the backend.ents.
+I also used React Icons libraries on the front end and CORS on the backend.
 
-The frontend was hosted on [Vercel](https://vercel.com/).
-The frontend was hosted on [Railway](https://railway.app/).
+The frontend is hosted on [Vercel](https://vercel.com/).
+The backend is hosted on [Railway](https://railway.app/).
 
 ## License
 
